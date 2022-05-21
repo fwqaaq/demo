@@ -7,5 +7,16 @@ inputs:
     description: "ACTION_ACCESS"
     required: true
 runs:
-  using: "node16"
-  main: "dist/index.mjs"
+  # using: "node16"
+  # main: "dist/index.mjs"
+  steps:
+    - name: node
+      uses: actions/setup-node@v3.0.0
+      with:
+        node-version: "16.x"
+    - name: create issue
+      shell: bash
+      run: |
+        npm install
+        npm run build
+        node dist/index.mjs
