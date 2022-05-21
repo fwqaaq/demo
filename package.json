@@ -1,0 +1,27 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.mjs --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jack-Zhang-1314/demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jack-Zhang-1314/demo/issues"
+  },
+  "homepage": "https://github.com/Jack-Zhang-1314/demo#readme",
+  "dependencies": {
+    "@actions/core": "^1.8.2",
+    "@vercel/ncc": "^0.33.4",
+    "dayjs": "^1.11.2",
+    "octokit": "^1.7.1"
+  }
+}

@@ -1,0 +1,11 @@
+# @format
+
+name: "test one create issues"
+description: "test create issues"
+inputs:
+  token:
+    description: "ACTION_ACCESS"
+    required: true
+runs:
+  using: "node16"
+  main: "dist/index.mjs"
