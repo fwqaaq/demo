@@ -10,7 +10,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: test github content
-        run: echo HI ${{github.repositoryUrl}}
+        run: |
+          echo HI ${{github.repositoryUrl}}
+          echo HI ${{github.token}}
+          echo HI ${{github.ref}}
+          echo HI ${{github.path}}
+          echo HI ${{github.repository}}
       - name: node
         uses: actions/setup-node@v3.0.0
         with:
