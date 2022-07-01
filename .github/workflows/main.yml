@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: test github content
-        run: echo HI '${{github}}'
+        run: echo HI ${{github.server_url}}
       - name: node
         uses: actions/setup-node@v3.0.0
         with:
