@@ -25,4 +25,4 @@ jobs:
       - name: create issues
         uses: ./
         with:
-          token: ${{secrets.ACTION_ACCESS}}
+          token: ${{github.token}}

@@ -1,11 +1,12 @@
 # @format
 
-name: "test one create issues"
-description: "test create issues"
+name: 'test one create issues'
+description: 'test create issues'
 inputs:
   token:
-    description: "ACTION_ACCESS"
+    description: 'ACTION_ACCESS'
     required: true
+    default: ${{github.token}}
 runs:
-  using: "node16"
-  main: "index.mjs"
+  using: 'node16'
+  main: 'index.mjs'
