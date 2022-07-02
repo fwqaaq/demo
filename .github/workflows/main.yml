@@ -25,4 +25,9 @@ jobs:
       - name: create issues
         uses: ./
         with:
-          token: ${{github.token}}
+          token: ${{secrets.GITHUB_TOKEN}}
+      - name: push to github
+        run: |
+          git add .
+          git commit -m "student repo message"
+          git push origin main

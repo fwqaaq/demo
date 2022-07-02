@@ -7,6 +7,9 @@ inputs:
     description: 'ACTION_ACCESS'
     required: true
     default: ${{github.token}}
+  repoURL:
+    description: 'repo'
+    default: ${{github.repositoryUrl}}
 runs:
   using: 'node16'
   main: 'index.mjs'
