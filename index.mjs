@@ -19,3 +19,5 @@ function getTitle() {
 function getBody() {
   return "* test a new task"
 }
+
+console.log(process.env)
