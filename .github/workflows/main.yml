@@ -28,8 +28,8 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
       - name: push to github
         uses: EndBug/add-and-commit@v9
-          with:
-            add: test.json
-            author_name: ${{github.repository_owner}}
-            author_email: zyj17715640603@gmail.com
-            committer_email: zyj17715640603@gmail.com
+        with:
+          add: test.json
+          author_name: ${{github.repository_owner}}
+          author_email: zyj17715640603@gmail.com
+          committer_email: zyj17715640603@gmail.com
