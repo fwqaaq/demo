@@ -23,14 +23,13 @@ jobs:
           path: ${{github.action_path}}/${{github.actor}}_test.json
       - name: Checkout another repo
         uses: actions/checkout@v3
-          with: 
-            repository: "Jack-Zhang-1314/git-action-message"
-            run: |
-              echo ${{env.path}}
-              mv ${{env.path}} ./
-              git config user.name Jack-Zhang-1314
-              git config user.email zyj17715640603@github.com
-              git add .
-              git commit -m "test json"
-              git push
-
+        with:
+          repository: 'Jack-Zhang-1314/git-action-message'
+          run: |
+            echo ${{env.path}}
+            mv ${{env.path}} ./
+            git config user.name Jack-Zhang-1314
+            git config user.email zyj17715640603@github.com
+            git add .
+            git commit -m "test json"
+            git push
