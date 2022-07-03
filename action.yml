@@ -6,7 +6,7 @@ inputs:
   token:
     description: 'ACTION_ACCESS'
     required: true
-    default: ${{secrets.ACTION_ACCESS}}
+    default: ${{github.token}}
   repoURL:
     description: 'repo'
     default: ${{github.repositoryUrl}}

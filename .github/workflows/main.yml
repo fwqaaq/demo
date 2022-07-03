@@ -18,7 +18,7 @@ jobs:
       - name: create issues
         uses: ./
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{secrets.ACTION_ACCESS}}
       - name: commit
         run: |
           cd git-action-message
