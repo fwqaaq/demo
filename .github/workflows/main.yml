@@ -20,4 +20,4 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
       - name: push to github
-        run: echo ${{github.action_path}}
+        run: ls ${{github.action_path}}
