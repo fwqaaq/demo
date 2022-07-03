@@ -16,21 +16,17 @@ jobs:
       - name: install
         run: |
           npm install
-          echo 'hi ${{github.action_path}}'
+          echo ${{github.action_path}}
       - name: create issues
         uses: ./
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-        env:
-          path: '${{github.action_path}}/${{github.actor}}_test.json'
       - name: Checkout another repo
         uses: actions/checkout@v3
         with:
           repository: Jack-Zhang-1314/git-action-message
       - name: commit
         run: |
-          echo ${{github.action_path}}
-          mv ${{env.path}} ./
           git config user.name Jack-Zhang-1314
           git config user.email zyj17715640603@github.com
           git add .
