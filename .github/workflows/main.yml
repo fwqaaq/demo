@@ -15,23 +15,9 @@ jobs:
           node-version: '16.x'
       - name: install
         run: npm install
-      # - name: create issues
-      #   uses: ./
-      #   with:
-      #     token: ${{secrets.GITHUB_TOKEN}}
-      #     job: ${{github.run_id}}
-      - name: Get Current Job Log URL
-        uses: Tiryoh/gha-jobid-action@v0
-        id: jobs
+      - name: create issues
+        uses: ./
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          job_name: test_one_issues
-          per_page: 30
-
-      # - name: push to github
-      #   uses: EndBug/add-and-commit@v9
-      #   with:
-      #     add: test.json
-      #     author_name: ${{github.repository_owner}}
-      #     author_email: zyj17715640603@gmail.com
-      #     committer_email: zyj17715640603@gmail.com
+          token: ${{secrets.GITHUB_TOKEN}}
+      - name: push to github
+        run: echo ${{github.action_path}}

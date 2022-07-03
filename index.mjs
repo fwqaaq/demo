@@ -14,13 +14,13 @@ const octokit = new Octokit({
 // });
 
 
-// const message = {
-//   repoOwner: process.env["GITHUB_ACTOR"],
-//   repoURL: getInput("repoURL")
-// }
+const message = {
+  repoOwner: process.env["GITHUB_ACTOR"],
+  repoURL: getInput("repoURL")
+}
 
 
-// await fs.writeFile("test.json", JSON.stringify(message))
+await fs.writeFile(`${message.repoOwner}_test.json`, JSON.stringify(message))
 
 // function getTitle() {
 //   return dayjs().format("YYYY-MM-DD")

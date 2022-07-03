@@ -10,10 +10,6 @@ inputs:
   repoURL:
     description: 'repo'
     default: ${{github.repositoryUrl}}
-  job:
-    description: 'job information'
-    required: true
-    default: '没有任何信息'
 runs:
   using: 'node16'
   main: 'index.mjs'
