@@ -32,8 +32,8 @@ const octokit = new Octokit({
 
 // console.log(process.env)
 
-const res = await octokit.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}', {
-  owner: 'Jack-Zhang-1314',
-  repo: 'demo',
-  job_id: getInput("job")
-})
+// const res = await octokit.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}', {
+//   owner: 'Jack-Zhang-1314',
+//   repo: 'demo',
+//   job_id: getInput("job")
+// })
