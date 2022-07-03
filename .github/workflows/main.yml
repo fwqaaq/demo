@@ -15,8 +15,7 @@ jobs:
           node-version: '16.x'
       - name: test_node
         run: |
-          echo ${{github.action_path}}
-          echo ${github.actor}
+          echo '${{toJSON(github)}}''
       - name: install
         run: npm install
       - name: create issues
