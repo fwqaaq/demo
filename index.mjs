@@ -43,4 +43,4 @@ console.log(res.data)
 //   repo: 'demo',
 //   job_id: 'test_one_issues'
 // })
-console.log(getInput("job"))
+// console.log(getInput("job"))
