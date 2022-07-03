@@ -20,6 +20,9 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           job: ${{github.run_id}}
+      - name: GitHub Actions job_id parser
+        run: echo ${{ steps.jobs.outputs.html_url }}
+
       # - name: push to github
       #   uses: EndBug/add-and-commit@v9
       #   with:
