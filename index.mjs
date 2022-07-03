@@ -18,20 +18,28 @@ const octokit = new Octokit({
 //   repo: 'Jack-Zhang-1314'
 // })
 
-const message = {
-  repoOwner: process.env["GITHUB_ACTOR"],
-  repoURL: getInput("repoURL")
-}
+// const message = {
+//   repoOwner: process.env["GITHUB_ACTOR"],
+//   repoURL: getInput("repoURL")
+// }
 
 
-await fs.writeFile("test.json", JSON.stringify(message))
+// await fs.writeFile("test.json", JSON.stringify(message))
 
-function getTitle() {
-  return dayjs().format("YYYY-MM-DD")
-}
+// function getTitle() {
+//   return dayjs().format("YYYY-MM-DD")
+// }
 
-function getBody() {
-  return "* test a new task"
-}
+// function getBody() {
+//   return "* test a new task"
+// }
 
 // console.log(process.env)
+
+const res = await octokit.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}', {
+  owner: 'Jack-Zhang-1314',
+  repo: 'demo',
+  job_id: 'test_one_issues'
+})
+
+console.log(res)
