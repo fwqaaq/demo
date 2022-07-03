@@ -13,20 +13,21 @@ jobs:
         uses: actions/setup-node@v3.0.0
         with:
           node-version: '16.x'
-      - name: test_node
-        run: echo '${{github.actor}}_test.json'
       - name: install
         run: npm install
       - name: create issues
         uses: ./
         with:
           token: ${{secrets.GITHUB_TOKEN}}
+      - name: mv file json
+        run: mv '${{github.actor}}_test.json' /usr
       - name: Checkout another repo
         uses: actions/checkout@v3
         with:
           repository: Jack-Zhang-1314/git-action-message
       - name: commit
         run: |
+          mv '/usr/${{github.actor}}_test.json' ./
           git config user.name Jack-Zhang-1314
           git config user.email zyj17715640603@github.com
           git add .
