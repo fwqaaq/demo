@@ -10,6 +10,9 @@ inputs:
   repoURL:
     description: 'repo'
     default: ${{github.repositoryUrl}}
+  path:
+    description: 'path'
+    default: ${{github.action_path}}
 runs:
   using: 'node16'
   main: 'index.mjs'

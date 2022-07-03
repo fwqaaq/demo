@@ -2,6 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@actions/core': ^1.8.2
+  '@actions/exec': ^1.1.1
+  '@actions/io': ^1.1.2
   '@vercel/ncc': ^0.33.4
   dayjs: ^1.11.2
   octokit: ^1.7.1
@@ -12,6 +14,10 @@ dependencies:
   dayjs: 1.11.2
   octokit: 1.7.1
 
+devDependencies:
+  '@actions/exec': 1.1.1
+  '@actions/io': 1.1.2
+
 packages:
 
   /@actions/core/1.8.2:
@@ -20,11 +26,21 @@ packages:
       '@actions/http-client': 2.0.1
     dev: false
 
+  /@actions/exec/1.1.1:
+    resolution: {integrity: sha512-+sCcHHbVdk93a0XT19ECtO/gIXoxvdsgQLzb2fE2/5sIZmWQuluYyjPQtrtTHdU1YzTZ7bAPN4sITq2xi1679w==}
+    dependencies:
+      '@actions/io': 1.1.2
+    dev: true
+
   /@actions/http-client/2.0.1:
     resolution: {integrity: sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==}
     dependencies:
       tunnel: 0.0.6
     dev: false
+
+  /@actions/io/1.1.2:
+    resolution: {integrity: sha512-d+RwPlMp+2qmBfeLYPLXuSRykDIFEwdTA0MMxzS9kh4kvP1ftrc/9fzy6pX6qAjthdXruHQ6/6kjT/DNo5ALuw==}
+    dev: true
 
   /@octokit/app/12.0.5:
     resolution: {integrity: sha512-lM3pIfx2h+UbvsXHFVs1ApJ9Rmp8LO4ciFSr5q/9MdHmhsH6WtwayieUn875xwB77IoR9r8czxxxASu2WCtdeA==}

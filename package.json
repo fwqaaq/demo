@@ -23,5 +23,9 @@
     "@vercel/ncc": "^0.33.4",
     "dayjs": "^1.11.2",
     "octokit": "^1.7.1"
+  },
+  "devDependencies": {
+    "@actions/exec": "^1.1.1",
+    "@actions/io": "^1.1.2"
   }
 }

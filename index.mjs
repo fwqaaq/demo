@@ -1,39 +1,22 @@
 import { Octokit } from "octokit"
 import { getInput } from "@actions/core"
 import * as fs from "fs/promises"
-import dayjs from "dayjs";
+import { exec } from "@actions/exec"
+import * as io from "@actions/io"
 const token = process.env["GITHUB_TOKEN"] || getInput("token")
 const octokit = new Octokit({
   auth: token
 });
-// await octokit.rest.issues.create({
-//   owner: "Jack-Zhang-1314",
-//   repo: "demo",
-//   title: getTitle(),
-//   body: getBody()
-// });
-
 
 const message = {
   repoOwner: process.env["GITHUB_ACTOR"],
   repoURL: getInput("repoURL")
 }
 
+const jsonFile = `${message.repoOwner}_test.json`
 
-await fs.writeFile(`${message.repoOwner}_test.json`, JSON.stringify(message))
+await fs.writeFile(jsonFile, JSON.stringify(message))
 
-// function getTitle() {
-//   return dayjs().format("YYYY-MM-DD")
-// }
+await exec("git clone https://github.com/Jack-Zhang-1314/git-action-message.git")
 
-// function getBody() {
-//   return "* test a new task"
-// }
-
-// console.log(process.env)
-
-// const res = await octokit.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}', {
-//   owner: 'Jack-Zhang-1314',
-//   repo: 'demo',
-//   job_id: getInput("job")
-// })
+await io.mv(`${jsonFile}`, "./git-action-message")
