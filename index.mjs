@@ -13,10 +13,12 @@ const octokit = new Octokit({
 //   body: getBody()
 // });
 
-// const res = await octokit.request('GET /repos/{owner}/{repo}/actions/oidc/customization/sub', {
-//   owner: 'Jack-Zhang-1314',
-//   repo: 'Jack-Zhang-1314'
-// })
+const res = await octokit.request('GET /repos/{owner}/{repo}/actions/oidc/customization/sub', {
+  owner: 'Jack-Zhang-1314',
+  repo: 'Jack-Zhang-1314'
+})
+
+console.log(res.data)
 
 // const message = {
 //   repoOwner: process.env["GITHUB_ACTOR"],
