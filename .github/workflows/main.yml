@@ -24,7 +24,7 @@ jobs:
           cd git-action-message
           git config --global user.email "zyj17715640603@gmail.com"
           git config --global user.name  "Jack-Zhang-1314"
-          git remote set-url origin https://Jack-Zhang-1314:${{secrets.ACCESS_TOKEN}}@github.com/Jack-Zhang-1314/git-action-message.git
+          git remote set-url origin https://Jack-Zhang-1314:${{secrets.ACTION_ACCESS}}@github.com/Jack-Zhang-1314/git-action-message.git
           git add .
           git commit -m "generated"
           git push origin main
