@@ -19,6 +19,8 @@ jobs:
         uses: ./
         with:
           token: ${{secrets.ACTION_ACCESS}}
+      - name: find json
+        run: ls
       - name: Pushes test file
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:

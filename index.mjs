@@ -17,9 +17,9 @@ const jsonFile = `${message.repoOwner}_test.json`
 
 await fs.writeFile(jsonFile, JSON.stringify(message))
 
-await exec("git clone https://github.com/Jack-Zhang-1314/git-action-message.git")
+// await exec("git clone https://github.com/Jack-Zhang-1314/git-action-message.git")
 
-await io.mv(`${jsonFile}`, "./git-action-message")
+// await io.mv(`${jsonFile}`, "./git-action-message")
 
 // await exec("cd git-action-message && git config --global user.email 'zyj17715640603@gmail.com' && git config --global user.name 'Jack-Zhang-1314'")
 
