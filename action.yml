@@ -13,7 +13,7 @@ inputs:
   job:
     description: 'job information'
     required: true
-    default: 'NONE'
+    default: ${{github.job}}
 runs:
   using: 'node16'
   main: 'index.mjs'

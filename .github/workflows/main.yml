@@ -19,7 +19,7 @@ jobs:
         uses: ./
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          job: ${{github}}
+          job: ${{gihub.job}}
       # - name: push to github
       #   uses: EndBug/add-and-commit@v9
       #   with:
