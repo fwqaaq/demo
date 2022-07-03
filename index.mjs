@@ -13,12 +13,6 @@ const octokit = new Octokit({
 //   body: getBody()
 // });
 
-const res = await octokit.request('GET /repos/{owner}/{repo}/actions/oidc/customization/sub', {
-  owner: 'Jack-Zhang-1314',
-  repo: 'Jack-Zhang-1314'
-})
-
-console.log(res.data)
 
 // const message = {
 //   repoOwner: process.env["GITHUB_ACTOR"],
@@ -38,9 +32,8 @@ console.log(res.data)
 
 // console.log(process.env)
 
-// const res = await octokit.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}', {
-//   owner: 'Jack-Zhang-1314',
-//   repo: 'demo',
-//   job_id: 'test_one_issues'
-// })
-console.log(getInput("job"))
+const res = await octokit.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}', {
+  owner: 'Jack-Zhang-1314',
+  repo: 'demo',
+  job_id: getInput("job")
+})
