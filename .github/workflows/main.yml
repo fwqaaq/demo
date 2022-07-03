@@ -19,6 +19,17 @@ jobs:
         uses: ./
         with:
           token: ${{secrets.ACTION_ACCESS}}
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.ACTION_ACCESS }}
+        with:
+          source_file: ${{github.actor}}_test.json
+          destination_repo: 'Jack-Zhang-1314/git-action-message'
+          destination_folder: 'test'
+          user_email: 'zyj17715640603@gmail.com'
+          user_name: 'Jack-Zhang-1314'
+          commit_message: 'A custom message for the commit'
       # - name: commit
       #   run: |
       #     cd ./git-action-message
