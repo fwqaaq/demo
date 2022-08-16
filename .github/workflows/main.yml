@@ -13,9 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Get weather report
-        run: |
-          ls -a
-          bash ./weather.sh
+        run: bash ./weather.sh
       - name: send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -38,4 +36,4 @@ jobs:
           # Optional plain body:
           body: Build job of ${{github.repository}} completed successfully!
           # Optional HTML body read from file:
-          html_body: ./result.html
+          html_body: file://result.html
