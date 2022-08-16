@@ -15,6 +15,7 @@ jobs:
       - name: Get weather report
         run: bash ./weather.sh
       - name: send mail
+        uses: dawidd6/action-send-mail@v3
         with:
           # Required mail server address:
           server_address: smtp.gmail.com
