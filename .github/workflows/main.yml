@@ -1,43 +1,38 @@
 # @format
 
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: '0 5 * * *'
 
 jobs:
   test_one_issues:
     runs-on: ubuntu-latest
-    name: create issues action
+    name: send weather to email
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: node
-        uses: actions/setup-node@v3.0.0
+      - name: Get weather report
+        run: bash ./weather.sh
+      - name: send mail
         with:
-          node-version: '16.x'
-      - name: install
-        run: npm install
-      - name: create issues
-        uses: ./
-        with:
-          token: ${{secrets.ACTION_ACCESS}}
-      - name: find json
-        run: ls
-      - name: Pushes test file
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.ACTION_ACCESS }}
-        with:
-          source_file: ${{github.actor}}_test.json
-          destination_repo: 'Jack-Zhang-1314/git-action-message'
-          destination_folder: 'test'
-          user_email: 'zyj17715640603@gmail.com'
-          user_name: 'Jack-Zhang-1314'
-          commit_message: 'A custom message for the commit'
-      # - name: commit
-      #   run: |
-      #     cd ./git-action-message
-      #     git config --global user.email "zyj17715640603@gmail.com"
-      #     git config --global user.name  "Jack-Zhang-1314"
-      #     git remote set-url origin "https://${{secrets.ACTION_ACCESS}}@github.com/Jack-Zhang-1314/git-action-message.git"
-      #     git add .
-      #     git commit -m "generated"
-      #     git push origin main
+          # Required mail server address:
+          server_address: smtp.gmail.com
+          # Required mail server port:
+          server_port: 465
+          # Optional (recommended): mail server username:
+          username: ${{secrets.MAIL_USERNAME}}
+          # Optional (recommended) mail server password:
+          password: ${{secrets.MAIL_PASSWORD}}
+          # Required mail subject:
+          subject: send weather mail
+          # Required recipients' addresses:
+          to: fwqaaq@gmail.com
+          # Required sender full name (address can be skipped):
+          from: Jack # <user@example.com>
+          # Optional whether this connection use TLS (default is true if server_port is 465)
+          secure: true
+          # Optional plain body:
+          body: Build job of ${{github.repository}} completed successfully!
+          # Optional HTML body read from file:
+          html_body: ./result.html
