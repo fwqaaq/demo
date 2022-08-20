@@ -3,7 +3,7 @@
 on:
   push:
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 7 * * *'
 
 jobs:
   test_one_issues:
@@ -28,7 +28,7 @@ jobs:
           # Required mail subject:
           subject: send weather mail
           # Required recipients' addresses:
-          to: fwqaaq@gmail.com
+          to: fwqaaq@gmail.com,WENHUADAI@gmail.com
           # Required sender full name (address can be skipped):
           from: Jack # <user@example.com>
           # Optional whether this connection use TLS (default is true if server_port is 465)
