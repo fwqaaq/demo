@@ -15,7 +15,7 @@ jobs:
       - name: Get weather report
         run: | 
           bash ./weather.sh
-          echo ${{env}}
+          echo ${{env}} >> a.json && cat a.json
       - name: send mail
         uses: dawidd6/action-send-mail@v3
         with:
