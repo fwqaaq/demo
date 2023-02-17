@@ -15,4 +15,4 @@ jobs:
       - name: Get weather report
         run: |
           bash ./weather.sh
-          echo ${{env}} >> a.json && cat a.json
+          echo ${{env}} >> a.txt && cat a.txt
