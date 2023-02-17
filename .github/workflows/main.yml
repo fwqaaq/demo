@@ -7,6 +7,8 @@ on:
 
 jobs:
   test_one_issues:
+    env:
+      VAR: print env
     runs-on: ubuntu-latest
     name: send weather to email
     steps:
@@ -15,4 +17,4 @@ jobs:
       - name: Get weather report
         run: |
           bash ./weather.sh
-          echo ${{env}} >> a.txt && cat a.txt
+          env
