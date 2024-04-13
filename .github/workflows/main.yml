@@ -1,20 +1,15 @@
-# @format
-
-on:
-  push:
-  schedule:
-    - cron: '0 7 * * *'
+on: [push]
 
 jobs:
-  test_one_issues:
-    env:
-      VAR: print env
+  compatibility_deno:
     runs-on: ubuntu-latest
-    name: send weather to email
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Get weather report
+      - uses: actions/checkout@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.32.5
+      - name: Run tests
         run: |
-          bash ./weather.sh
-          env
+          deno --version
+          deno run index.js
